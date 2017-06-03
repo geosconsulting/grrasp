@@ -1,0 +1,63 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+	"geometry": {
+			"type": "Point",
+			"coordinates": [-85.3137,
+			10.1211,
+			20.08]
+		},
+		"type": "Feature",
+		"properties": {
+			"mag": 6.5,
+			"place": "13km ENE of Hojancha, Costa Rica",
+			"time": 1351039534,
+			"updated": 1351121705,
+			"tz": -360,
+			"url": "http://earthquake.usgs.gov/earthquakes/eventpage/usb000dc6x",
+			"felt": 88,
+			"cdi": 6.4,
+			"mmi": 7,
+			"alert": "green",
+			"status": "REVIEWED",
+			"tsunami": "1",
+			"sig": "706",
+			"net": "us",
+			"code": "b000dc6x",
+			"ids": ",at00mcdgry,usb000dc6x,pt12298000,",
+			"sources": ",at,us,pt,",
+			"types": ",dyfi,eq-location-map,general-link,geoserve,historical-moment-tensor-map,historical-seismicity-map,impact-link,impact-text,losspager,moment-tensor,nearby-cities,origin,p-wave-travel-times,phase-data,scitech-link,shakemap,tectonic-summary,"
+		},		
+		"id": "usb000dc6x"
+	},
+	{"geometry": {
+			"type": "Point",
+			"coordinates": [-120.856,
+			36.3097,
+			9.2]
+		},
+		"type": "Feature",
+		"properties": {
+			"mag": 5.3,
+			"place": "26km ENE of King City, California",
+			"time": 1350802509,
+			"updated": 1351227914,
+			"tz": -420,
+			"url": "http://earthquake.usgs.gov/earthquakes/eventpage/nc71863625",
+			"felt": 7459,
+			"cdi": 4.5,
+			"mmi": 5,
+			"alert": "green",
+			"status": "REVIEWED",
+			"tsunami": "1",
+			"sig": "882",
+			"net": "nc",
+			"code": "71863625",
+			"ids": ",nc71863625,usb000d9zl,at00mc8dvw,",
+			"sources": ",nc,us,at,",
+			"types": ",dyfi,eq-location-map,general-link,geoserve,historical-moment-tensor-map,historical-seismicity-map,impact-link,losspager,nearby-cities,origin,p-wave-travel-times,phase-data,scitech-link,shakemap,tectonic-summary,"
+		},
+		
+		"id": "nc71863625"
+	}]
+}

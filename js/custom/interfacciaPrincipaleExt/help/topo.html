@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="js/custom/interfacciaPrincipaleExt/help/help.css">	
+	</head>
+	<body>
+		<div class="manuale">
+			<br>
+			<h2 class='manuale'>Network Topologies </h2><br>
+			<p class='manuale'>
+			The GIS platform has been realized with the main purpose of managing, creating and modifying complex networks of any nature (gas distribution, power grids, water networks, etc.) in a topologically correct manner. 
+			Networks represent any engineering structures composed of nodes and edges physically connected such as pylons and cables, manholes and conduits, cities and roads, etc….
+			Topology is the arrangement for how point, line, and polygon features share geometry and is fundamentally used to ensure data quality and to aid in data compilation. 
+			In our case topology is employed in order to: 
+			</p><br>
+			 <ul class="lista">
+				<li>
+			    Enhance analysis	
+				<li>
+				Do network analysis
+				</li>
+				<li>
+				Constrain how features share geometry (e.g.  each segment of the network must end or start in a node of the network)
+				</li>
+				<li>
+				Define and enforce data integrity rules (e.g., some type of segments should connect only through some type of nodes or segments) 
+				</li>
+				<li>
+				Support topological relationship queries and navigation (e.g., to navigate feature adjacency and connectivity using routing algorithms). 
+				</li>
+				<li>
+				Supports sophisticated editing tools and enforce the topological constraints of the data model (e.g. removing a node also remove the connected edge). 
+				</li>
+				<li>
+				Construct features from unstructured geometry (e.g., to construct complex networks from several lines or segments without relational rules embedded)
+				</li>
+			</ul>
+			<br>
+			<p class='manuale'>
+		    Topologies can be imported into the GIS platform either by uploading existing GIS files or by digitizing a new network directly online.  The latter procedure will be illustrated whilst the import of data in the map server has already been illustrated earlier in this document.
+			The fourth button of the toolbar opens the digitizing window which has five buttons divided into two functionality groups for editing and measuring.
+			It is possible to add a polygon which could represent a catchment, a census tract, a building, etc… or any feature which can be abstracted to a polygon. Pretty much in the same fashion is possible to add nodes and then lines connecting nodes.
+			Is of paramount importance to add lines after the nodes have been created because the system makes use of snapping (e.g. a line is automatically linked to a node) for establishing a topologically compliant and unique connection between punctual and linear features.
+			Imported networks do not require nodes to be placed in advance as the database is able to add a node whenever lines are crossing or joining.
+			Is important to remember that the tools provided with the GIS Platform are intended to be used to draw any type of “generic” networked structure and is therefore not capable to provide the proofing tools typical of experts systems. Hence is left to the user’s knowledge of a particular type of network to design the network correctly without impingements and incongruences.
+			</p><br>
+			<img id="img7" src="js/custom/interfacciaPrincipaleExt/help/editingwin.png" alt="modules" height="340" width="280">
+			<br><br>
+			<p class='manuale'>
+			In order to design specific networks type (e.g. power grid systems, water systems, gas distribution systems, etc…) is much safer and productive to use external specialized software and then import them into the GIS platform.  
+			This leads to the second possibility offered by the platform to upload existing networks onto the server and then use them for “feeding” the models hosted on the GIS Platform.
+			The procedure for uploading files (Error! Reference source not found.) requires them to be in ESRI shapefile format (the de facto standard in the GIS field) and to be compressed using the public domain and commonly used ZIP format.  Once uploaded the file an automatic procedure will import the files into the database and create the layer for visualization.
+			</p><br><br>
+			<p class='manuale'>
+			All routines, types and other management objects are stored in the database under the “topology” schema while each topology is stored in its own schema (e.g. italy_topo, lombardy_topo, etc…)
+			Each topology is composed of four tables with the following naming:
+			</p><br><br>	
+			<ul class="lista">
+				<li>
+			    Edge : lines connected by nodes
+				<li>
+				Face: polygons containing nodes
+				</li>
+				<li>
+				Node: intersection amongst edges
+				</li>
+				<li>
+				Relation: TopoGeometry datatype
+				</li>
+			</ul>
+			<br>
+			<p class='manuale'>
+			Features composing topologies are added using variations of the standard SQL language as detailed in the following example.
+			</p><br>
+			<ul class="lista">
+				<li>
+			    SELECT ST_AddIsoNode( 'conf', 0, 'POINT(10 20)');			
+				</li>	
+				<li>
+				SELECT ST_AddIsoNode('conf', 0,'POINT(100 20)');
+				</li>
+				<li>
+				SELECT ST_AddEdgeModFace('conf', 1, 2,'LINESTRING(10 20, 100 20)');
+				</li>		
+			</ul>
+			<br>
+			<p class='manuale'>
+			This structure can be automatically converted in a structure suitable for a post-processing with mathematical analyses with the START Node, END Node and EDGE ID mandatory fields.
+			</p>
+			<br>
+		</div>
+
+	</body>
+</html>

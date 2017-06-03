@@ -1,0 +1,16 @@
+function Smax = f(Cmax,F,I)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+
+Smax=F*(1-I)*Cmax;
+
+end

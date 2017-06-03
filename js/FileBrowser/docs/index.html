@@ -1,0 +1,518 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <style type="text/css">
+    h3 {
+        margin: 0 0 5px 0;
+        padding: 20px 0 0 0;
+    }
+    h4 {
+        margin: 0 0 3px 0;
+    }
+    p {
+        margin: 0 0 5px 0;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 10px;
+    }
+    li {
+        margin: 0 0 5px 0;
+    }
+    dt {
+        margin: 5px 0 0 0;
+        text-decoration: underline;
+    }
+    pre,
+    p.box {
+        padding: 10px 10px 10px 10px;
+        margin: 0 0 10px 0;
+        border: 1px solid #dfdfdf;
+        background: #f8f8f8;
+        min-width: 500px;
+        float: left;
+    }
+    pre + *,
+    p.box + * {
+        clear: both;
+    }
+    </style>
+    
+    <title>Ex.ux.FileBrowserPanel - Docs</title>
+</head>
+<body>
+    <h1>Ext.ux.FileBrowserPanel</h1>
+    <p>
+        FileBrowserPanel is an extension that allows a user to browser through files
+        and perform some common operations on them.<br>
+        These include: create/delete/rename folders and delete/rename/move/download files.<br>
+        Uploading of files is not directly implemented. There are numerous ways to do this,
+        and various other extensions that provide this functionality. <br>
+        As such, it provides a config option that takes a callback function that you can utilise to hook in your own
+        upload implementation.<br>
+        Uploading might be implemented in the future, but most likely not any time soon.
+    </p>
+    
+    <h2>Configuration</h2>
+    <p>
+        The filebrowserpanel extends from <a href="http://extjs.com/deploy/ext-3.0.0/docs/?class=Ext.Panel">Ext.Panel</a> and inherits all it's config options.<br>
+        In addition to those, the following are added.
+    </p>
+    <dl>
+        <dt>dataUrl</dt>
+        <dd>
+            The url that will be used to send/receive data to/from the server.<br>
+            Defaults to: filebrowserpanel.php
+        </dd>
+        <dt>defaultThumbnailImage</dt>
+        <dd>
+            A url to an image. This image will be shown in thumbail view for files where the server didn't provide a thumbnail.<br>
+            Defaults to: media/icons/48/document_blank.png
+        </dd>
+        <dt>fileUploadCallback</dt>
+        <dd>
+            A callback function that can be used to hook in upload functionality.<br>
+            Will be called when a uses clicks on the 'Upload' button in the toolbar.<br>
+            Defaults to: Ext.emptyFn
+        </dd>
+    </dl>
+    
+    <h2>Events</h2>
+    <p>
+        The filebrowserpanel fires the following events
+    </p>
+    
+    <dl>
+        <dt>beforecreatefolder</dt>
+        <dd>
+            Fires before a new folder is created on the server, return false to cancel the event.<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>node</strong> Ext.tree.TreeNode - The node representing the folder to be created<br>
+        </dd>
+        <dt>beforerenamefolder</dt>
+        <dd>
+            Fires before folder will be renamed on the server, return false to cancel the event.<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>node</strong> Ext.tree.TreeNode - The node representing the folder that will be renamed<br>
+            <strong>oldName</strong> String - The new folder name<br>
+            <strong>newName</strong> String - The old folder name<br>
+        </dd>
+        <dt>beforedeletefolder</dt>
+        <dd>
+            Fires before folder will be deleted on the server, return false to cancel the event<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>node</strong> Ext.tree.TreeNode - The node representing the folder to be deleted<br>
+        </dd>
+        <dt>beforerenamefile</dt>
+        <dd>
+            Fires before file will be renamed on the server, return false to cancel the event
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>record</strong> Ext.data.Record - The record representing the file that will be renamed<br>
+            <strong>oldName</strong> String - The new file name<br>
+            <strong>newName</strong> String - The old file name<br>
+        </dd>
+        <dt>beforedeletefile</dt>
+        <dd>
+            Fires before file will be deleted from the server, return false to cancel the event
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>record</strong> Ext.data.Record - The record representing the file that will be deleted<br>
+        </dd>
+        <dt>beforedownloadfile</dt>
+        <dd>
+            Fires before file will be downloaded from the server, return false to cancel the event
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>record</strong> Ext.data.Record - The record representing the file that will be downloaded<br>
+        </dd>
+        <dt>beforemovefile</dt>
+        <dd>
+            Fires before one or more files will be moved to another folder on the server, return false to cancel the event
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>files</strong> Array - An array containing Ext.data.Record objects representing the file(s) to move<br>
+            <strong>sourceFolder</strong> String - Path of the source folder<br>
+            <strong>destinationFolder</strong> String - Path of the destination folder<br>
+        </dd>
+        <dt>createfolder</dt>
+        <dd>
+            Fires when folder was successfully created<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>renamefolder</dt>
+        <dd>
+            Fires when folder was successfully renamed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>deletefolder</dt>
+        <dd>
+            Fires when folder was successfully deleted<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>renamefile</dt>
+        <dd>
+            Fires when file was successfully renamed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>deletefile</dt>
+        <dd>
+            Fires when file(s) was/were successfully deleted<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>movefile</dt>
+        <dd>
+            Fires when file(s) was/were successfully moved<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>createfolderfailed</dt>
+        <dd>
+            Fires when creation of folder failed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>renamefolderfailed</dt>
+        <dd>
+            Fires when renaming folder failed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>deletefolderfailed</dt>
+        <dd>
+            Fires when deleting folder failed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>renamefilefailed</dt>
+        <dd>
+            Fires when renaming file failed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>deletefilefailed</dt>
+        <dd>
+            Fires when deleting file(s) failed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+        <dt>movefilefailed</dt>
+        <dd>
+            Fires when moving file(s) failed<br>
+            Listeners will be called with the following arguments:<br>
+            <strong>this</strong> Ext.ux.FileBrowserPanel<br>
+            <strong>opts</strong> Object - The options that were used for the original request<br>
+            <strong>o</strong> Object - Decoded response body from the server<br>
+        </dd>
+    </dl>
+    
+    <h2>Example usage</h2>
+    <p>
+        To show the filebrowserpanel in a specified div,<br>
+        simply create a new instance and render it to the div as a normal panel.<br>
+        So say you have a div with id 'filebrowser-ct', you can do:
+    </p>
+    <pre>
+var fb = new Ext.ux.FileBrowserPanel({
+    width: 800,
+    height: 600,
+    renderTo: 'filebrowser-ct'
+});
+    </pre>
+    <p>
+        Or in the context of an application:
+    </p>
+    <pre>
+var viewport = new Ext.Viewport({
+    layout: 'border',
+    defaults: {
+        width: 100,
+        height: 100
+    },
+    items: [{
+        region: 'center',
+        layout: 'fit',
+        xtype: 'ux-filebrowserpanel'
+    },{
+        region: 'north',
+        html: 'I be North!'
+    },{
+        region: 'east',
+        html: 'I be East!'
+    },{
+        region: 'south',
+        html: 'I be South!'
+    },{
+        region: 'west',
+        html: 'I be West!'
+    }]
+});
+    </pre>
+    
+    <h2>Server side</h2>
+    <p>
+       The following section describes what is sent to the server for each particular action,<br>
+       and what the expected response is.<br>
+       Request method for all actions is POST.<br>
+       Response should always be JSON encoded unless stated otherwise.
+    </p>
+    <p>
+        This extension comes with a sample PHP backend that should get you started.<br>
+        Keep in mind however, that it is a <em>sample</em> and not written to be safe!<br>
+        It's there so it works out of the box when put in the examples folder of ExtJS,<br>
+        do not use in production environment!
+    </p>
+    
+	<h3>Folder list</h3>
+	<p>
+		The folders shown in the tree are loaded using a default <a href="http://extjs.com/deploy/ext-3.0.0/docs/?class=Ext.tree.TreeLoader">Ext.tree.TreeLoader</a>.<br>
+		Visit the API for more information.
+	</p>
+	<h4>Request</h4>
+	<p class="box">
+        <strong>action</strong> get-folders<br>
+        <strong>path</strong> /Root/path/to/parent/folder
+	</p>
+	<h4>Expected Response</h4>
+	<pre>
+[{
+	text: "folder-name",
+	leaf: true
+},{
+	text: "other folder-name",
+	leaf: true
+}]
+	</pre>
+	
+	<h3>File list</h3>
+	<p>
+		The files shown in the grid are loaded using a default <a href="http://extjs.com/deploy/ext-3.0.0/docs/?class=Ext.data.JsonStore">Ext.data.JsonStore</a>.<br>
+		Visit the API for more information.
+	</p>
+	<h4>Request</h4>
+	<p class="box">
+        <strong>action</strong> get-files<br>
+        <strong>path</strong> /Root/path/to/folder
+	</p>
+	<h4>Expected Response</h4>
+	<pre>
+{
+	success: true|false,                       // Boolean indication if action was successful
+	data: [{
+		name: "file-name",                     // The file name
+		size: 12345,                           // filesize in bytes
+		type: "the-file-type",                 // The type of file
+		date_modified: 1122334455,             // UNIX timestamp when the file was last modified
+		thumbnail: "path/to/thumbnail.png",    // Optional path to thumbnail image
+		row_class: "class-for-grid-row"        // Class for the row in the grid
+	}]
+}
+	</pre>
+	
+    <h3>Create folder</h3>
+    <h4>Request</h4>
+    <p class="box">
+        <strong>action</strong> create-folder<br>
+        <strong>path</strong> /Root/path/to/new/folder
+    </p>
+    <h4>Expected Response</h4>
+    <pre>
+{
+    success: true|false,                        // Boolean indication if action was successful
+    message: "Some sort of feedback message"    // Optional message with error or feedback
+}
+    </pre>
+    
+    <h3>Rename folder</h3>
+    <h4>Request</h4>
+    <p class="box">
+        <strong>action</strong> rename-folder<br>
+        <strong>path</strong> /Root/path/to/parent/folder<br>
+        <strong>newName</strong> new-folder-name<br>
+        <strong>oldName</strong> old-folder-name<br>
+    </p>
+    <h4>Expected Response</h4>
+    <pre>
+{
+    success: true|false,                        // Boolean indication if action was successful
+    message: "Some sort of feedback message"    // Optional message with error or feedback
+}
+    </pre>
+    
+    <h3>Delete folder</h3>
+    <h4>Request</h4>
+    <p class="box">
+        <strong>action</strong> create-folder<br>
+        <strong>path</strong> /Root/path/folder/to/delete
+    </p>
+    <h4>Expected Response</h4>
+    <pre>
+{
+    success: true|false,                        // Boolean indication if action was successful
+    message: "Some sort of feedback message"    // Optional message with error or feedback
+}
+    </pre>
+    
+    <h3>Rename file</h3>
+    <h4>Request</h4>
+    <p class="box">
+        <strong>action</strong> rename-file<br>
+        <strong>path</strong> /Root/path/to/file/to/rename.ext<br>
+        <strong>newName</strong> new-file-name.ext<br>
+        <strong>oldName</strong> old-file-name.ext<br>
+    </p>
+    <h4>Expected Response</h4>
+    <pre>
+{
+    success: true|false,                        // Boolean indication if action was successful
+    message: "Some sort of feedback message"    // Optional message with error or feedback
+}
+    </pre>
+    
+    <h3>Delete file</h3>
+    <h4>Request</h4>
+    <p>
+        You can delete multiple files at once. Therefore the files to delete<br>
+        are send as an array, the key being the id's of the records representing<br>
+        the files in the grid's store.<br>
+    </p>
+    <p class="box">
+        <strong>action</strong> delete-file<br>
+        <strong>files[ext-record-1]</strong> /Root/path/to/file/to/delete.ext<br>
+        <strong>files[ext-record-2]</strong> /Root/path/to/file/to/delete.ext<br>
+        <strong>files[ext-record-n]</strong> /Root/path/to/file/to/delete.ext<br>
+    </p>
+    <h4>Expected Response</h4>
+    <p>
+        Since you can delete multiple files at once, it might occur that some were
+        successfully deleted, but not all.<br>
+        Therefore the response must supply information about which files were deleted, and which weren't.<br>
+        <strong>Note:</strong> because of this, the success flag may only be 'true' if all files were deleted successful.
+    </p>
+    <pre>
+{
+    success: true|false,                        // Boolean indication if action was successful
+    message: "Some sort of feedback message"    // Optional message with error or feedback
+    data: {
+        failed: [{
+            recordId: "ext-record-1"
+            reason: "You don't have permission te delete this file"
+        },{
+            recordId: "ext-record-2"
+            reason: "The server is on strike"
+        }],
+        successful: [{
+            recordId: "ext-record-n"
+        }]
+    }
+}
+    </pre>
+    
+    <h3>Download file</h3>
+    <h4>Request</h4>
+    <p class="box">
+        <strong>action</strong> download-file<br>
+        <strong>path</strong> /Root/path/to/file/to/download.ext<br>
+    </p>
+    <h4>Expected Response</h4>
+    <p>
+        None, instead the contents of the file should be send to the browser<br>
+        along with the appropriate headers invoking the download.
+    </p>
+    
+    <h3>Move file</h3>
+    <h4>Request</h4>
+    <p>
+        You can move multiple files at once. Therefore the files to move<br>
+        are send as an array, the key being the id's of the records representing<br>
+        the files in the grid's store.<br>
+    </p>
+    <p class="box">
+        <strong>action</strong> move-file<br>
+        <strong>sourcePath</strong> /Root/path/to/source/folder<br>
+        <strong>destinationPath</strong> /Root/path/to/destination/folder<br>
+        <strong>overwrite</strong> true|false<br>
+        <strong>files[ext-record-1]</strong> /Root/path/to/file/to/move.ext<br>
+        <strong>files[ext-record-2]</strong> /Root/path/to/file/to/move.ext<br>
+        <strong>files[ext-record-n]</strong> /Root/path/to/file/to/move.ext<br>
+    </p>
+    <h4>Expected Response</h4>
+    <p>
+        Since you can move multiple files at once, it might occur that some were
+        successfully moved, but not all.<br>
+        Therefore you must supply information about which files were moved, which not, <br>
+        and which might cause other files to be overwritten. <br>
+        In case of the latter, the user will be prompted, and resend the request with the remaining files and 'overwrite' set to 'true'.<br>
+        <strong>Note:</strong> because of this, the success flag may only be 'true' if all files were moved successful.
+    </p>
+    <pre>
+{
+    success: true|false,                        // Boolean indication if action was successful
+    message: "Some sort of feedback message"    // Optional message with error or feedback
+    data: {
+        failed: [{
+            recordId: "ext-record-1"
+            reason: "You don't have permission te delete this file"
+        }],
+        existing: [{
+            recordId: "ext-record-2"
+            reason: "A file or folder with the same name in the destination folder already exists"
+        }],
+        successful: [{
+            recordId: "ext-record-n"
+        }]
+    }
+}
+    </pre>
+    
+    <h2>Internationalization</h2>
+    <p>
+        All strings output strings are stored in Ext.ux.FileBrowserPanel.prototype.il8n.<br>
+        Override this with your own language strings as needed.<br>
+        An example of this be found in <a href="../locale/nl_NL.js">locale/nl_NL.js</a> or at the bottom of the source file.
+    </p>
+    
+    <h2>Licence</h2>
+    <p>
+        <a href="http://sam.zoy.org/wtfpl/COPYING">WTFPL</a><br>
+        No warranties whatsoever, use at own risk.
+    </p>
+    
+    <h2>Author</h2>
+    <p>Rocco Bruyn</p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+function T_inizio_disservizio  = f(disservizioDelay,disservizio,t,A)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+if disservizioDelay==0 && disservizio>0
+    T_inizio_disservizio=t;
+else T_inizio_disservizio=A;
+
+end
+
+% if disservizioDelay~=disservizio && disservizio>0
+%     T_inizio_variazioneDiss=t;
+% else T_inizio_variazioneDiss=B;
+% end
+%

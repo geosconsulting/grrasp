@@ -1,0 +1,17 @@
+function S = f(Smax,Deff)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+if Deff>Smax
+    S=Smax;
+else
+    S=Deff;
+end

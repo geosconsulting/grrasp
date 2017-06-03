@@ -1,0 +1,35 @@
+function Deff= f(Dstd,deltaDlogicaPadre,CdT,Tdisservizio,Tlogica,deltaDlogicaMaxOut,nodo,TdissNODO)
+ 
+% Function description:
+ 
+% This function ....
+ 
+% INPUT
+% ...
+ 
+% OUTPUT
+% ...
+ 
+ 
+j=1;
+deltaDlogicaOUT=zeros(length(CdT),1);
+deltaDlogicaIN=zeros(length(CdT),1);
+ 
+ 
+for j=1:(length(CdT))
+    if Tdisservizio(j)>=Tlogica(j,nodo) && CdT(j,nodo)>0
+        deltaDlogicaIN(j,1)=CdT(j,nodo)*deltaDlogicaPadre(j);
+    else
+        deltaDlogicaIN(j,1)=0;
+    end
+    if TdissNODO>=Tlogica(nodo,j) && CdT(nodo,j)>0
+          deltaDlogicaOUT(j,1)=CdT(nodo,j)*deltaDlogicaMaxOut;
+    else
+        deltaDlogicaOUT(j,1)=0;
+    end
+end
+deltaDlogicaTotIN=sum(deltaDlogicaIN);
+deltaDlogicaTotOut=sum(deltaDlogicaOUT);
+ 
+ 
+Deff=Dstd+deltaDlogicaTotIN-deltaDlogicaTotOut;

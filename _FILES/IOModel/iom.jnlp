@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" 
+        codebase="http://localhost/grrasp/_FILES/IOModel"
+        href="iom.jnlp">
+    <information>
+        <title>Input-Output Model</title>
+        <vendor>F. Lana Team</vendor>
+    </information>
+    <resources>
+        <!-- Application Resources -->
+        <j2se version="1.7+"
+              href="http://localhost/grrasp/_FILES/IOModel"/>
+        <jar href="iom.jar" main="true" />
+    </resources>
+    <application-desc
+         name="Input-Output Model"
+         main-class="it.jrc.stanet.iim">
+     </application-desc>
+     <update check="background"/>
+</jnlp>

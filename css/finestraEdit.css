@@ -1,0 +1,123 @@
+@CHARSET "ISO-8859-1";
+
+#misura {
+	font: 20px Tahoma, Helvetica, Arial, Sans-Serif;
+	text-align: center;
+    color: #222;
+	text-shadow: 0px 2px 3px #555;	
+}
+
+.editWin {
+	background-image:url(
+			../img/toolbar/application_form.png) !important;
+            height:20px !important;
+            width:20px !important;
+} 
+
+.filtering {
+	background-image:url(
+			../img/toolbar/Fatcow-Farm-Fresh-Filter.ico) !important;
+            height:20px !important;
+            width:20px !important;
+}
+
+.modify_point {
+           background-image:url(
+			../img/toolbar/bullet_wrench.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }  
+
+.draw_point {
+           background-image:url(
+			../img/toolbar/bullet_blue_add.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }   
+
+.delete_point {
+           background-image:url(
+			../img/toolbar/bullet_red_delete.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }       
+
+.move_point {
+           background-image:url(
+			../img/toolbar/bullet_start.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }
+
+.modify_line {
+           background-image:url(
+			../img/toolbar/line_red.png) !important;
+            height:20px !important;
+            width:20px !important;
+            } 
+            
+.draw_line {
+           background-image:url(
+			../img/toolbar/line_blue_add.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }
+        
+.delete_line {
+           background-image:url(
+			../img/toolbar/line_blue_delete.png) !important;
+            height:20px !important;
+            width:20px !important;
+        } 
+
+.move_line {
+           background-image:url(
+			../img/toolbar/chart_line.png) !important;
+            height:20px !important;
+            width:20px !important;
+            }  
+            
+.modify_poly {
+           background-image:url(
+			../img/toolbar/shape_square_edit.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }  
+
+.draw_poly {
+           background-image:url(
+			../img/toolbar/shape_square_blue_add.png) !important;
+            height:20px !important;
+            width:20px !important;
+        } 
+
+.delete_poly {
+           background-image:url(
+			../img/toolbar/shape_square_blue_delete.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }       
+
+.move_poly {
+           background-image:url(
+			../img/toolbar/shape_move_front.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }              
+ 
+			        
+.measure_lines {
+           background-image:url(
+			../img/toolbar/ruler.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }            
+           
+.measure_areas {
+           background-image:url(
+			../img/toolbar/ruler_square.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }                
+
+

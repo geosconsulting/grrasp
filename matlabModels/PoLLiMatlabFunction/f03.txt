@@ -1,0 +1,40 @@
+function [F,Mripristino] = f(fFt,F0,fFM,M,Mrip)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+
+% Codice con valutazione solo in intesità, non nel tempo.
+% fFM=M*FM; %modulazione in intensità
+% fFt=1;
+% i=F0-fFM*fFt;
+%
+% if i<0
+%     F=0;
+% else
+%     F=i;
+% end
+
+% Codice con valutazione in intensità e tempo con doppia attacco da parte della minaccia
+
+% Modifica per avere ripristino a fine minaccia, in realtà sarebbe sempre i=F0-fFM*fFt
+
+if M>0
+    i=F0-fFM(1)*fFt;
+    Mripristino=M;
+else i=F0-fFM(2)*fFt; %fFM(2) è quella usata solo per il ripristino di integrità perchè M=0;
+    Mripristino=Mrip;
+end
+
+if i<0
+    F=0;
+else
+    F=i;
+end

@@ -1,0 +1,5 @@
+nella funzione delete file o e' indefinito....
+verificare risosta dal file php filebrowserpanel.php oppure nel file Ext.ux.FileBrowserPanel.js che fa la chiamata
+il refresh adesso e' manuale
+
+verificare info sui dati WMS sembra non funzionare piu

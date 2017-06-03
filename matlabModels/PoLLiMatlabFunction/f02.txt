@@ -1,0 +1,18 @@
+function fFM = f(Mrip,M)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+
+
+%Funzione di modulazione dell'integrità funzionale in intensità retta con coefficiente=1
+fFM=[0,0];
+fFM(1)=M*1; %modulazione in intensità, %modulazione in intesità della minaccia FM=[0 a 1]
+fFM(2)=Mrip*1; %modulazione in intensità, da usare solo per il recupero di integrità,cioè quando M=0;

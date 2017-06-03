@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="js/custom/interfacciaPrincipaleExt/help/help.css">
+		
+		
+	</head>
+	<body>
+		<div class="manuale">
+			<br><br>
+			<h1 class='manuale'>IT infrastructure and software of the GIS Platform</h1><br>
+			<h2 class='manuale'>Spatial enabled database: PostgreSQL and PostGIS</h2><br>
+			<p class='manuale'>
+				All the data provided by the GIS Platform are stored in a PostgreSQL database with the PostGIS spatial extensions enabled. In addition, the PgRouting extension has been installed to extend the PostGIS / PostgreSQL geospatial database the capability to provide geospatial routing functionality.
+				PostgreSQL is an open source relational database management system ( DBMS ) developed by a worldwide team of volunteers. PostgreSQL is not controlled by any corporation or other private entity and the source code is available free of charge.
+				PostgreSQL has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness. It runs on all major operating systems, including Linux, UNIX and Windows
+			</p><br>
+			<table class='manuale'>
+				<tr>
+				  <th class='manuale'>Limit</th>
+  				  <th class='manuale'>Value</th> 
+				</tr>
+				<tr>
+				  <td class='manuale'>Maximum Database Size</td>
+				  <td class='manuale'>Unlimited</td>
+				</tr>
+				<tr>
+				  <td class='manuale'>Maximum Table Size</td>
+				  <td class='manuale'>32 TB</td>
+				</tr>
+				<tr>
+				  <td class='manuale'>Maximum Row Size</td>
+				  <td class='manuale'>1.6 TB</td>
+				</tr>
+				<tr>
+				  <td class='manuale'>Maximum Field Size</td>
+				  <td class='manuale'>1 GB</td>
+				</tr>
+				<tr>
+				  <td class='manuale'>Maximum Rows per Table</td>
+				  <td class='manuale'>Unlimited</td>
+				</tr>
+				<tr>
+				  <td class='manuale'>Maximum Columns per Table</td>
+				  <td class='manuale'>250 - 1600 depending on column types</td>
+				</tr>
+				<tr>
+				  <td class='manuale'>Maximum Indexes per Table</td>
+				  <td class='manuale'>Unlimited</td>
+				</tr>
+			</table> <br>
+			<p class='manuale'>
+				PostGIS adds support for geographic objects to the PostgreSQL object-relational database. In effect, PostGIS "spatially enables" the PostgreSQL server, allowing it to be used as a backend spatial database for geographic information systems (GIS), much like ESRI's SDE or Oracle's Spatial extension.
+			</p><br>
+			<p class='manuale'>
+				Organization using PostGIS:
+			</p><br>
+			
+				<ul class="lista">
+					<li>
+						US Davis Soil Resource Laboratory publishes soil inventory data for the southwest United States
+					</li>
+					<li>
+						North Dakota State Water Commission manages all their hydrological and spatial data
+					</li>
+					<li>
+						Infoterra, a leading European satellite and aerial imagery provider, runs their data provision and sales systems on PostGIS, and stores the complete Ordnance Survey database on PostGIS.
+					</li>
+					<li>
+						The national mapping agency of France manages over 100 million topographic features in PostGIS/PostgreSQL and provides read/write access to over 100 field researchers around the country.
+					</li>
+				</ul>
+			<br>
+			<p class='manuale'>
+				PgRouting is a library of PostgreSQL functions for solving various network analysis problems. It currently provides functions for solving the shortest path. In the GIS Platform is used jointly with Matlab for calculating failure in a complex network due to physical connections amongst features (e.g. path affected if a certain node fails or is removed)
+			</p><br>
+			<p class='manuale'>
+				PgRouting provides functions for:
+			</p><br>		
+				<ul class="lista">
+					<li>
+						Shortest Path Dijkstra: routing algorithm without heuristics
+					</li>
+					<li>
+						Shortest Path A-Star: routing for large datasets (with heuristics)
+					</li>
+					<li>
+						Shortest Path Shooting-Star: routing with turn restrictions (with heuristics)
+					</li>
+				</ul>
+			<br>
+			<h2 class='manuale'>Data preprocessing</h2><br>
+			<p class='manuale'>
+				GIS data requires often being manipulated, converted, digitized and re-projected.  In this case using an online platform is not feasible, mainly for the limitation of the bandwidth, and is therefore important to use desktop based software with strong GIS data manipulation capabilities.
+				In our case all the manipulations and data dissemination has been performed using Quantum GIS (often abbreviated QGIS) which is a cross-platform free and open source desktop geographic information systems (GIS) application that provides data viewing, editing, and analysis capabilities.
+			</p><br>
+			<p class='manuale'>
+				QGIS main features:
+			</p><br>
+				<ul class="lista">
+					<li>
+						can be used as a stand-alone application;
+					</li>
+					<li>
+						can be extended with “plug-ins”;
+					</li>
+					<li>
+						can read and write from/to PostgreSQL/PostGIS database;
+					</li>
+					<li>
+						can read and write from/to GeoServer consuming OGC standards (WMS, WFS, WPS) and de facto (GeoRSS , KML, tiles) geospatial web services;
+					</li>
+					<li>
+						it uses the Python programming language which is the most used language used for high-performance/scientific computing
+					</li>
+				</ul>
+			<br>
+			<p class='manuale'>
+				This software has already been successfully used in risk and disaster management (e.g. InaSAFE Disaster Scenario Assessment for Emergencies).
+			</p><br>
+			<h2 class='manuale'>Web Platform</h2><br>
+			<h3>Servers</h3><br>
+			<p class='manuale'>
+				The GIS Platform runs on top of an Apache HTTP Server using an additional mapping server, namely GeoServer specialized in providing web access to spatial data.
+				The interaction between the two servers is made transparent allowing transferring data from one server to the other by setting up the Apache Proxy Pass for GeoServer Public Data Access, hence overcoming the “same-origin” policy which would limit the usability of the data.
+				The Apache HTTP Server is software notable for playing a key role in the initial growth of the World Wide Web. In 2009 it became the first web server software to surpass the 100 million website milestone and since has evolved to dominate other web servers in terms of functionality and performance.
+				GeoServer is a Java-based software server that allows users to view and edit geospatial data. The GeoServer project is a full transactional Java (J2EE) implementation of the OpenGIS Consortium's Web Feature Server specification and Web Coverage Server specification, with an integrated Web Map Server.
+			</p><br>
+			<h3>Open Geospatial Consortium (OCG) Standards</h3><br>
+			<p class='manuale'>
+				OGC standards are technical documents that detail interfaces or encodings. Software developers use these documents to build open interfaces and encodings into their products and services. OGC Web Services (OWS) are OGC standards created for use in World Wide Web applications.
+				Ideally, when OGC standards are implemented in products or online services by two different software engineers or software producers working independently, the resulting components plug and play, that is, and they work together without further debugging.
+			</p><br>
+			<img id="img2" src="js/custom/interfacciaPrincipaleExt/help/ogcstand.png" alt="ogcstand" height="300" width="400">
+			<h3>Web Feature Service (WFS)</h3><br>
+			<p class='manuale'>
+				The Web Feature Service (WFS) is a standard created by the OGC that refers to the sending and receiving of geospatial data through HTTP. WFS encodes and transfers information in Geography Markup Language, a subset of XML. The data can also be downloaded, further analyzed, and combined with other data. The transactional capabilities of WFS allow for collaborative mapping applications. In short, WFS is what enables open spatial data.
+			</p><br>
+			<h3>Web Map Service (WMS)</h3><br>
+			<p class='manuale'>
+				The OGC Web Map Service (WMS) specification defines an HTTP interface for requesting geo-referenced map images from a server. WMS provides a standard interface for requesting a geospatial map image. The benefit of this is that WMS clients can request images from multiple WMS servers, and then combine them into a single view for the user. The standard guarantees that these images can all be overlaid on one another as they actually would be in reality. Numerous servers and clients support WMS.
+			</p><br>
+			<h3>Web Processing Service (WPS)</h3><br>
+			<p class='manuale'>
+				The OGC Web Processing Service (WPS) provides rules for standardizing how inputs and outputs (requests and responses) for invoking geospatial processing services, such as polygon overlay, as a Web service.
+				The WPS standard defines how a client can request the execution of a process, and how the output from the process is handled. It defines an interface that facilitates the publishing of geospatial processes and clients’ discovery of and binding to those processes. The data required by the WPS can be delivered across a network or they can be available at the server.
+				WPS can describe any calculation (i.e. process) including all of its inputs and outputs, and trigger its execution as a Web service. Although WPS was designed to work with spatially referenced data, it can be used with any kind of data. WPS makes it possible to publish, find, and bind to processes in a standardized and thus interoperable fashion.
+			</p><br>
+			<h3>Programming languages</h3><br>
+			<h4>Client side programming</h4><br>
+			<p class='manuale'>
+				The interaction with the user is performed using two JavaScript libraries, namely ExtJS and GeoExt, whilst the spatial data retrieval from GeoServer relies on the OpenLayers library.
+				With OpenLayers is possible to integrate a dynamic map in any web page. It can display map tiles and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds.
+				Ext JS is a pure JavaScript application framework for building interactive web applications using several techniques such as Ajax, DHTML and DOM scripting. Ext JS began as a project to extend the functionality that the YUI Library offered. A key aspect of the YUI Library is the cross-browser support, which allows building Web applications without worrying about the target browser.
+				GeoExt is a JavaScript library that provides groundwork for creating rich web mapping applications. It combines the two above mentioned web mapping library OpenLayers with ExtJS. GeoExt provides a suite of customizable widgets and data handling support that makes it easy to build applications for viewing, editing, and styling geospatial data.
+			</p><br>
+			<h4>Server side programming</h4><br>
+			<p class='manuale'>
+				Any procedure performed on the server uses the PHP programming language. In particular PHP seems to be particularly suited for interacting with Matlab. PHP has been tested both for passing parameters to compiled Matlab modules and using a text based file (.m file). In both cases it has provided reasonably fast and easy access to the features offered by Matlab.
+				The PHP Hypertext Preprocessor allows web developers to create dynamic content that interacts with databases. PHP applications are normally found on Linux servers and in conjunction with a database (PostgreSQL in our case). It provides those servers with functionality similar to that provided by the Java Server Pages (JSP).   JSP is similar to PHP, but it uses the Java programming language and also used in out solution to a lesser extent.
+			</p><br>
+			<img id="img2" src="js/custom/interfacciaPrincipaleExt/help/itinfra.png" alt="itinfra" height="300" width="400">
+			<br><br>
+		</div>
+
+	</body>
+</html>

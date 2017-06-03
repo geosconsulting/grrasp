@@ -1,0 +1,62 @@
+function fFt = f(carattTemporaliNodo,carattTemporaliMinaccia,Mrip,t)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+%Funzione di modulazione dell'integrità funzionale nel tempo, nel caso di
+%due minaccie differenti per inizio attacco nel tempo.
+
+Tbuffer=carattTemporaliNodo(1);
+Tpropagazione=carattTemporaliNodo(2);
+TorganizzazioneMax=carattTemporaliNodo(3);
+TripristinoMax=carattTemporaliNodo(4);
+TinizioM1=carattTemporaliMinaccia(1);  %da impostare manualmente nelle descrizione minaccia
+TfineM1=carattTemporaliMinaccia(2); %da impostare manualmente nelle descrizione minaccia
+TinizioM2=carattTemporaliMinaccia(3); %da impostare manualmente nelle descrizione minaccia
+TfineM2=carattTemporaliMinaccia(4); %da impostare manualmente nelle descrizione minaccia
+Torganizzazione=Mrip*TorganizzazioneMax;
+Tripristino=TripristinoMax*Mrip; %in realtà sarebbe Tripristino=TripristinoMax*M; ma così M mi annulla il ripristino a fine minaccia, uso minaccia salvata  
+tauRipristino=Tripristino/5; %controllare se vale anche per nodo non trasporto
+tauPropagazione=Tpropagazione/5; %controllare se vale anche per nodo non trasporto
+t0=TinizioM1+Tbuffer;
+t1=t0+Tpropagazione;
+t2o=t1+Torganizzazione;
+t2m=TfineM1;
+if t2m>=t2o %chiarire cosa succede se M=0 ma non ancora organizzato (t2o>t2m) e quindi cosa fa integrità funzionale
+    t2=t2m;
+else t2=t2o;
+end
+t3=t2+Tripristino;
+t4=TinizioM2+Tbuffer;
+t5=t4+Tpropagazione;
+t6m=TfineM2;
+t6o=t5+Torganizzazione; 
+if t6m>=t6o
+    t6=t6m;
+else t6=t6o;
+end
+t7=t6+Tripristino;
+
+if t<t0
+    fFt=0;
+elseif t>=t0 && t<t1 
+        fFt=1-exp(-(t-t0)/tauPropagazione);
+elseif t>=t1 && t<t2
+        fFt=1;
+elseif t>=t2 && t<t3 
+        fFt=exp(-(t-t2)/tauRipristino);  
+elseif t>=t4 && t<t5
+        fFt=1-exp(-(t-t4)/tauPropagazione);
+elseif t>=t5 && t<t6
+        fFt=1;
+elseif t>=t6 && t<t7
+        fFt=exp(-(t-t6)/tauRipristino);  
+else fFt=0;
+end

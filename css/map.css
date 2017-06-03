@@ -1,0 +1,42 @@
+@CHARSET "ISO-8859-1";
+
+.mapArea {
+	float: left;
+	margin-left: 0px;
+	width: 79%;
+	height: 600px;
+	border-bottom-style: solid 1px;
+	border-color: black;
+}
+
+.controlliArea {
+	float: right;	
+	margin-right: 0px;
+	width: 19%;
+	height: 200px;
+	border-bottom-style: solid 1px;
+	border-color: red;
+}
+
+.infoArea {
+	float: right;	
+	margin-right: 0px;
+	width: 19%;
+	height: 400px;
+	border-bottom-style: solid 1px;
+	border-color: #0000FF;
+}
+
+.layerArea {
+	float: right;
+	margin-right: 0px;
+	width: 20%;
+	height: 400px;
+}
+
+.legendArea {
+	padding-left: 18px;
+}
+
+
+

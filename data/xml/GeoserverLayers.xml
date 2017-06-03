@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>GeoServer Configuration</title>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW"/>
+</head>
+<body>
+
+Data Store "gisplatform"
+<ul>
+  <li><a href="http://localhost:8080/geoserver/rest/workspaces/gisplatform/datastores/gisplatform/featuretypes/italian_regions.html">italian_regions</a></li>
+  <li><a href="http://localhost:8080/geoserver/rest/workspaces/gisplatform/datastores/gisplatform/featuretypes/macro_regions.html">macro_regions</a></li>
+  <li><a href="http://localhost:8080/geoserver/rest/workspaces/gisplatform/datastores/gisplatform/featuretypes/nodes.html">nodes</a></li>
+  <li><a href="http://localhost:8080/geoserver/rest/workspaces/gisplatform/datastores/gisplatform/featuretypes/segments.html">segments</a></li>
+</ul>
+</body>
+</html>
+

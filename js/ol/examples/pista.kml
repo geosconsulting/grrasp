@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+	xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>GPS device</name>
+    <snippet>Created 05/31/13 12:14:13</snippet>
+    <LookAt>
+      <gx:TimeSpan>
+        <begin>2009-10-28T12:54:04Z</begin>
+        <end>2009-11-06T07:54:30Z</end>
+      </gx:TimeSpan>
+      <longitude>8.671149</longitude>
+      <latitude>45.655670</latitude>
+      <range>23140.287929</range>
+    </LookAt>
+<!-- Normal track style -->
+    <Style id="track_n">
+      <IconStyle>
+        <scale>.5</scale>
+        <Icon>
+          <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+<!-- Highlighted track style -->
+    <Style id="track_h">
+      <IconStyle>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <StyleMap id="track">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#track_n</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#track_h</styleUrl>
+      </Pair>
+    </StyleMap>
+<!-- Normal waypoint style -->
+    <Style id="waypoint_n">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+<!-- Highlighted waypoint style -->
+    <Style id="waypoint_h">
+      <IconStyle>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <StyleMap id="waypoint">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#waypoint_n</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#waypoint_h</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="lineStyle">
+      <LineStyle>
+        <color>99ffac59</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Folder>
+      <name>Waypoints</name>
+      <Placemark>
+        <name>acqua Sesto Calende</name>
+        <description>25-FEB-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.632313,45.729616,208.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>parcheggio La Maddalena</name>
+        <description>18-OTT-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.677011,45.660978,194.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>parcheggio Porto Torre</name>
+        <description>25-OTT-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.683878,45.677381,196.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>parcheggio Sesto Calende</name>
+        <description>18-OTT-09</description>
+        <TimeStamp><when>2009-10-28T12:54:04Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.632273,45.730209,207.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>parcheggio Tornavento</name>
+        <description>18-OTT-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.706405,45.589627,152.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>parcheggio Vizzola Ticino</name>
+        <description>25-OTT-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.684789,45.627017,180.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>partenza</name>
+        <description>18-OTT-09</description>
+        <TimeStamp><when>2009-11-06T07:54:30Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.629782,45.724086,199.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>ponte su Canale Villoresi</name>
+        <description>25-OTT-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.698886,45.646202,192.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>prese Canale Industriale e Villoresi</name>
+        <description>18-OTT-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.677895,45.666831,186.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tornavento</name>
+        <description>18-OTT-09</description>
+        <TimeStamp><when>2009-11-06T07:49:05Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.706440,45.581200,156.00</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>tunnel sotto ciclabile</name>
+        <description>25-OTT-09</description>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>8.691404,45.643149,188.00</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Tracks</name>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="js/custom/interfacciaPrincipaleExt/help/help.css">	
+	</head>
+	<body>
+		<div class="manuale">
+			<br>
+			<h2 class='manuale'>Passing to the mathematical models</h2>
+			<br>
+			<p class='manuale'>
+			The communication between the GIS interface and the many models linked to the platform can occur by using files stored in the server (or uploaded by the user) or via a direct connection with the database that provides the spatial data to the platform.
+			The structures of the data must follow the following pattern, three fields with the first field being the unique ID of the link between two nodes, the second  the starting node ID and the third the ending node ID.
+			</p><br>
+			<br>
+			
+		 	<h2 class='manuale'>Matlab®  mathematical models</h2>
+			<br>
+			<p class='manuale'>
+			<br>
+			The model called "Metrics" is capable to calculate four different characteristics for a given network, namely:
+			</p><br>
+			<ul class="lista">
+				<li>
+			    Criticality;	
+				<li>
+				Vulnerability;
+				</li>
+				<li>
+				Critical path (optional);	
+				</li>
+				<li>
+				Clustering;
+				</li>
+			</ul>
+			<br>
+			<p class='manuale'>
+			Additionally the user can decide whether the critical path must be calculated and the starting and ending node for which the user wants to know the critical path. For a detailed description of the methods of calculation of these features, refer to the documentation of the procedures implemented in Matlab. In case the values are not provided or are incorrect a number of error trapping procedures support the user to accomplish the calculation correctly.
+			The panel which allows the interaction between the user and the models is always visible but can be hidden if necessary by clicking the plus sign at the top-right end side of the window bar.
+			The two models named “System Construction” and “Systems Simulation” are linked, the former model reads a file structured as described in the previous paragraph and prepares a representation of any infrastructure in a format usable by the latter. For the execution of the models it is necessary that there is a copy of the software Matlab installed on the server with the module Simulink enabled.
+			It is important to remember that the number and availability of models is destined to increase with time. The system has been designed to be open and capable to integrate new models coded and designed in-house at the JRC as well as externally by other experts and organizations.
+			</p>
+			<br>
+			<h2 class='manuale'>Preprocessing of data for Input-Output Model </h2>
+			<br>
+			<p class='manuale'>
+			In economics, an input–output model is a quantitative economic technique that represents the interdependencies between different branches of a national economy or different regional economies. 
+			In order to connect the output of these models to the GIS Platform and use them for additional analysis specific software has been developed to preprocess the data.
+			This software is able to integrate diverse source of data and store the resulting dataset into the same database used to store spatially located data. In this manner is possible to apply spatial analysis to non-spatial data. 
+			The main preprocessing task is  the merge of the  data stored in the “Socio-economic accounts” (SEA) including industry output, capital stock, wages and employment by skill type with the National Input-Output tables that are based on the basic international supply and use tables.
+			This merging entails several sub-tasks such as converting all monetary values expressed in dollars and/or national currencies in equivalent sums in Euro.
+			This is accomplished by reading automatically the official exchange rate provided by the European Central Bank.
+			It is also possible to regionalize the calculations performed at national level by inputting employment figures provided by EUROSTAT for the Nomenclature of territorial units for statistics (NUTS).
+			The more detailed explanation of the calculations, assumptions and output performed by this software are beyond the scope of this document and are provided in another document but is important to remark that it is possible to download it from the GIS Platform by using the file browser tool. 
+			The software is provided as an executable Java file (jar) and can be used in any computer with Java runtime installed and regardless of the Operating System (Windows, Linux ,Mac OS ,etc…)
+			</p>
+			<br>
+			<img id="img10" src="js/custom/interfacciaPrincipaleExt/help/matlabmodel.png" alt="modules" height="350" width="325">
+			<br>
+			<br>
+		</div>
+
+	</body>
+</html>

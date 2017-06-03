@@ -1,0 +1,15 @@
+<dataStore>
+	<name>cacaoMeravigliao</name>
+	<type>PostGIS</type>
+	<enabled>true</enabled>
+	<workspace>testaggio</workspace>
+	<connectionParameters>
+		<port>5433</port>
+		<user>postgres</user>
+		<passwd>GIS</passwd>
+		<dbtype>postgis</dbtype>
+		<host>localhost</host>
+		<database>wfst_polipo</database>
+		<schema>public</schema>
+	</connectionParameters>  
+</dataStore>

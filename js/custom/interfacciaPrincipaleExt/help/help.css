@@ -1,0 +1,97 @@
+.manuale {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+p.manuale {
+	text-align: justify;
+}
+h1.manuale {
+	font-size: 24px;
+	text-align: center;
+}
+h2.manuale {
+	font-size: 14px;
+	text-align: center;
+}
+h3.manuale {
+	font-size: 12px;
+	text-align: left;
+}
+h4.manuale{
+	font-size: 12px;
+	text-align: left;
+}
+#img1 {
+	position: relative;
+	left: 120px;
+}
+#img2 {
+	position: relative;
+	left: 70px;
+}
+#img3 {
+	position: relative;
+	left: 20px;
+}
+#img4 {
+	position: relative;
+	left: 30px;
+	margin-right: 20px;
+}
+#img5 {
+	position: relative;
+	left: 110px;
+}
+#img6 {
+	position: relative;
+	left: 60px;
+}
+#img7 {
+	position: relative;
+	left: 150px;
+}
+#img8 {
+	position: relative;
+	left: 100px;
+}
+#img9 {
+	position: relative;
+	left:80px;
+}
+#img10 {
+	position: relative;
+	left:100px;
+}
+.immaginedoppia {
+	position: relative;
+	left: 20px;
+	margin-right: 20px;
+}
+
+.lista {
+	padding-left: 20px;
+	margin-left:30px;
+	list-style-type: circle;
+}
+
+.listanum {
+	padding-left: 20px;
+	margin-left:30px;
+	list-style-type: decimal;
+}
+
+table.manuale {
+	border: 1px solid black;
+	padding: 3px;
+	margin-left:40px;
+}
+td.manuale {
+	border: 1px solid black;
+	padding: 3px;
+}
+th.manuale {
+	font-weight: bold;
+	padding: 3px;
+}

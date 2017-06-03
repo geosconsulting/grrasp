@@ -1,0 +1,25 @@
+function [TdisservizioOUT Tdisservizio]  = f(disservizio,t,A)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+
+if disservizio==0
+    Tdisservizio=0;
+else
+    Tdisservizio=t-A;
+end
+% if disservizio==0
+%     TvariazioneDiss=0;
+% else
+%     TvariazioneDiss=t-B;
+% end
+
+TdisservizioOUT=Tdisservizio;

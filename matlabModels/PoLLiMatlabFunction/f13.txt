@@ -1,0 +1,19 @@
+function fIt = f(Tdiss,TritardoFunzionale,nodo)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+%funzione di modulazione dell'inoperabilità nel tempo
+fIt=zeros(1,length(Tdiss));
+j=1;
+for j=1:length(Tdiss)
+    tau=TritardoFunzionale(j,nodo)/5; %vedere se anche per i nodi non di trasporto vale questa tau!!!
+    fIt(1,j)=1-exp(-(Tdiss(j)-TritardoFunzionale(j,nodo))/tau);%modulazione nel tempo
+end

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="js/custom/interfacciaPrincipaleExt/help/help.css">	
+	</head>
+	<body>
+		<div class="manuale">
+			<br>
+			<h2 class='manuale'>Map Server Viewer</h2><br>
+			<p class='manuale'>
+			The data stored in the local database and used by the platform are organized in:	
+			</p><br>
+			<ol class="listanum">
+					<li>
+					Workspaces
+					</li>
+					<li>
+				    Datastore
+					</li>
+					<li>
+				    Layers
+					</li>
+			</ol><br>
+			<p class='manuale'>
+			Workspaces are group of data related with a particular project (e.g. gisplatform) while datastores are logical groups of data within a certain project (e.g. gas network data, electrical data, administrative data,etc…). The layers (e.g. airports, railroads,etc..) are the actual data each of which belongs to a workspace which in turn belongs to a datastore
+			Workspaces can be added or deleted, datastores can be deleted and both of them can be refreshed when any changes is performed.
+			In uploading external GIS files to the platform (zipped shapefile format) the data will be renamed by the server by adding a sequence with random letters and numbers using this code to create a new datastore.
+			This uploading procedure will automatically create a datastore that will belong to the workspace active at the moment of uploading while the name of the layer will be the name of the file contained in the compressed file.
+			</p><br>
+			<img class="immaginedoppia" src="js/custom/interfacciaPrincipaleExt/help/upload.png" alt="upload" height="100" width="240">		
+			<img class="immaginedoppia" src="js/custom/interfacciaPrincipaleExt/help/upload2.png" alt="upload2" height="100" width="240">
+			<br><br>
+			<p class='manuale'>
+			Selecting the new automatically created datastore the data contained in it will be made available in the layers section with the possibility to add it to the map.
+			</p><br>
+			<img id="img5" src="js/custom/interfacciaPrincipaleExt/help/upload3.png" alt="upload3" height="200" width="340">
+			<br><br>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,34 @@
+function inoperabilita = f(fIdiss,I0,adiacenzaFunzionale,nodo,TritardoFunzionale,Tdiss,fIt)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+
+j=1;
+disservizioTot=zeros(length(adiacenzaFunzionale),1);
+for j=1:length(adiacenzaFunzionale)
+    if adiacenzaFunzionale(j,nodo)==1 && Tdiss(j)>=TritardoFunzionale(j,nodo)
+        disservizioTot(j,1)=fIdiss(1,j)*fIt(1,j);
+        %disservizioTot(j,1)=fIdiss; se non voglio avere
+        %modulazione nel tempo del trasferimento di disservizio in
+        %inoperabilità
+    else disservizioTot(j,1)=0;
+    end
+end
+
+disservizioTotIN=sum(disservizioTot); % ho fatto somma, altro approccio prendere il max
+i=I0+disservizioTotIN;
+
+if i>1
+    inoperabilita=1;
+elseif i<=0
+    inoperabilita=0;
+else inoperabilita=i;
+end

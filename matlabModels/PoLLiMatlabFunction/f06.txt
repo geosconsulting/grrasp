@@ -1,0 +1,20 @@
+function [disservizio disservizioOUT ] = f(S,Deff)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+if Deff==0
+    disservizio=0;
+else
+disservizio=(Deff-S)/Deff;
+
+end
+
+disservizioOUT=disservizio;

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="js/custom/interfacciaPrincipaleExt/help/help.css">	
+	</head>
+	<body>
+		<div class="manuale">
+			<br>
+			<h2 class='manuale'>Map Viewer</h2><br>
+			<p class='manuale'>
+			The map shows two types of maps, namely background maps and overlay maps.
+			The former are provided by commercial or no profit companies such as Google or OpenStreet Map whilst the overlay maps are all the spatial datasets stored in the local database or directly fetched from a remote database that can be added to or removed from the mapping area. This distinction is absolutely transparent to the user which is oblivious of whether the data are stored locally or remotely.
+			An example of remotely stored data is the layer named “Earthquakes” made available by the USGS (United States Geological Survey) and integrated in real time in the GIS platform website.		
+			The map server managed jointly by NASA and University of Columbia SEDAC data base has been connected permanently to exploit the huge amount of data available and the solidity of the service offered. Datasets are divided into thematic areas that span from hazards to land use, data on population and poverty,sustainability,climate, infrastructures, etc….				
+			</p><br>
+			<img id="img3" src="js/custom/interfacciaPrincipaleExt/help/remoteserver.png" alt="modules" height="320" width="520">
+			<br><br>
+			<p class='manuale'>
+		    In this case the window is slightly different and is necessary to choose the layer to be added and then explicitly adding the layer clicking the “Add layer” button at the bottom-right side of the window (Figure 8).
+			In order to use Google maps as background we are using the two most widely used projection namely the World Geodetic System  (WGS84) as a display projection (e.g. coordinates are calculated in this projection) and Web Mercator Projection as actual projection of the map. External servers, such as the SEDAC database, must be able to serve their local map using one the above mentioned projections systems otherwise adding the maps to the GIS Paltform could lead unpredictable results.
+			</p><br><br>
+			
+		</div>
+
+	</body>
+</html>

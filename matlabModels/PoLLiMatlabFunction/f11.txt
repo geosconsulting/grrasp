@@ -1,0 +1,18 @@
+function [deltaDlogicaMaxOut deltaDlogicaMaxNodeOut] = f(Smax,Dstd)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+deltaDlogicaMaxOut=Dstd-Smax;
+if deltaDlogicaMaxOut<0
+    deltaDlogicaMaxOut=0;
+end
+
+deltaDlogicaMaxNodeOut=deltaDlogicaMaxOut;

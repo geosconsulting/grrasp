@@ -1,0 +1,19 @@
+function fIdiss = f(parameters,DisservizioIN)
+
+% Function description:
+
+% This function ....
+
+% INPUT
+% ...
+
+% OUTPUT
+% ...
+
+
+%Funzione di modulazion lineare con coefficiente angolare variabile,
+fIdiss=zeros(1,length(DisservizioIN));
+j=1;
+for j=1:length(DisservizioIN)
+    fIdiss(1,j)=DisservizioIN(j)*parameters(5);% modulazione in intensità
+end

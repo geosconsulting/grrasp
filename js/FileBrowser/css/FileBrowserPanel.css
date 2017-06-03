@@ -1,0 +1,136 @@
+/* tree */
+.ux-filebrowser-tree .x-tree-node-leaf .x-tree-node-icon {
+	background-image: url('../../ext-3.3.1/resources/images/default/tree/folder.gif') !important;
+}
+
+/* thumbnail panel */
+.ux-filebrowser-thumbnails .x-panel-body {
+	background: #ffffff;
+	font: 11px Arial, Helvetica, sans-serif;
+}
+
+.ux-filebrowser-thumbnails .ux-filebrowser-thumb {
+	height: 48px;
+	padding: 3px;
+}
+	.ux-filebrowser-thumbnails .thumb media {
+	}
+
+.ux-filebrowser-thumbnails .ux-filebrowser-thumb-wrap {
+	float: left;
+	margin: 10px;
+	padding: 5px;
+	width: 100px;
+	text-align: center;
+}
+	.ux-filebrowser-thumbnails .ux-filebrowser-thumb-wrap span {
+		display: block;
+		overflow: hidden;
+		text-align: center;
+	}
+
+.ux-filebrowser-thumbnails .x-view-over {
+	border: 1px solid #dddddd;
+	background: #efefef url("../../ext-3.3.1/resources/images/default/grid/row-over.gif") repeat-x left top;
+	padding: 4px;
+}
+
+.ux-filebrowser-thumbnails .x-view-selected {
+	background: #eff5fb url("../media/selected.gif") no-repeat right bottom;
+	border: 1px solid #99bbe8;
+	padding: 4px;
+}
+	.ux-filebrowser-thumbnails .x-view-selected .thumb {
+		background: transparent;
+	}
+
+/* main toolbar */
+.ux-filebrowser-icon-rename {
+	background-image: url('../media/icons/16/pencil.png') !important;
+}
+.ux-filebrowser-icon-delete {
+	background-image: url('../media/icons/16/delete.png') !important;
+}
+
+.ux-filebrowser-icon-refresh {
+	background-image: url('../media/icons/16/refresh.png') !important;
+}
+
+.ux-filebrowser-icon-upload {
+	background-image: url('..//media/icons/16/arrow_up.png') !important;
+}
+.ux-filebrowser-icon-download {
+	background-image: url('../media/icons/16/arrow_down.png') !important;
+}
+.ux-filebrowser-icon-view {
+	background-image: url('../media/icons/16/application.png') !important;
+}
+.ux-filebrowser-icon-details {
+	background-image: url('../media/icons/16/application_view_detail.png') !important;
+}
+.ux-filebrowser-icon-thumbnails {
+	background-image: url('../media/icons/16/application_view_tile.png') !important;
+}
+
+/* context menu's */
+.ux-filebrowser-icon-newfolder {
+	background-image: url('../media/icons/16/folder_add.png') !important;
+}
+.ux-filebrowser-icon-renamefolder {
+	background-image: url('../media/icons/16/folder_edit.png') !important;
+}
+.ux-filebrowser-icon-deletefolder {
+	background-image: url('../media/icons/16/folder_delete.png') !important;
+}
+.ux-filebrowser-icon-renamefile {
+	background-image: url('../media/icons/16/page_white_edit.png') !important;
+}
+.ux-filebrowser-icon-deletefile {
+	background-image: url('../media/icons/16/page_white_delete.png') !important;
+}
+.ux-filebrowser-icon-downloadfile {
+	background-image: url('../media/icons/16/page_white_put.png') !important;
+}
+
+/* grid rows */
+.ux-filebrowser-iconrow td:first-child div {
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 20px;	
+}
+.ux-filebrowser-icon-unknown-file td:first-child div {
+	background-image: url('../media/icons/16/page_white.png');
+}
+.ux-filebrowser-icon-text-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_text.png');
+}
+.ux-filebrowser-icon-audio-file td:first-child div {
+	background-image: url('../media/icons/16/music.png');
+}
+.ux-filebrowser-icon-video-file td:first-child div {
+	background-image: url('../media/icons/16/film.png');
+}
+.ux-filebrowser-icon-image-file td:first-child div {
+	background-image: url('../media/icons/16/image.png');
+}
+.ux-filebrowser-icon-vector-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_vector.png');
+}
+.ux-filebrowser-icon-flash-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_flash.png');
+}
+.ux-filebrowser-icon-document-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_word.png');
+}
+.ux-filebrowser-icon-spreadsheet-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_excel.png');
+}
+.ux-filebrowser-icon-presentation-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_powerpoint.png');
+}
+.ux-filebrowser-icon-acrobat-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_acrobat.png');
+}
+.ux-filebrowser-icon-archive-file td:first-child div {
+	background-image: url('../media/icons/16/page_white_compressed.png');
+}

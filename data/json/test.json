@@ -1,0 +1,34 @@
+{		
+	"rows": [
+	{
+		"elevation": 1770,
+		"name": "Col d'Arclusaz",		
+		"id": 472
+	},
+	{
+		"elevation": 1831,
+		"name": "Pointe de Favre",		
+		"id": 458
+	},
+	{
+		"elevation": 2364,
+		"name": "Pointe du Midi",		
+		"id": 487
+	},
+	{
+		"elevation": 1856,
+		"name": "Col d'Outanne",		
+		"id": 5700
+	},
+	{
+		"elevation": 2375,
+		"name": "Col de Comba Mornay",		
+		"id": 5644
+	},
+	{
+		"elevation": 2000,
+		"name": "La Pointe",
+		"id": 5710
+	}
+	]
+}

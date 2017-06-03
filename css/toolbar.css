@@ -1,0 +1,256 @@
+@CHARSET "ISO-8859-1";
+
+
+.export {
+          background-image: url(
+		 ../img/toolbar/database_save.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }   
+
+.layerWin {
+          background-image: url(
+		 ../img/toolbar/layers.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }  
+        
+.layerDel {
+          background-image: url(
+		 ../img/toolbar/layers_delete.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }          
+              
+        
+.zoomin {
+          background-image: url(
+		 ../img/toolbar/zoom_in.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }
+        
+.zoomlayer {
+          background-image: url(
+		 ../img/toolbar/page_white_swoosh.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }
+          
+.zoomout {
+          background-image: url(
+		../img/toolbar/zoom_out.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }
+        
+.zoomfull {
+          background-image:url(
+		  ../img/toolbar/arrow_out.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }
+        
+.pan {
+          background-image:url(../img/toolbar/icon_pan.png)	!important;
+          height:20px !important;
+          width:20px !important;
+        }
+        
+.refresh {
+            background-image:url(
+            ../img/toolbar/arrow_refresh.png) !important;
+            height:20px !important;
+            width:20px !important;
+
+        }
+        
+.info {
+            background-image:url(
+            ../img/toolbar/information.png) !important;
+            height:20px !important;
+            width:20px !important;
+
+        }
+        
+.stampa {
+            background-image:url(
+            ../img/toolbar/printer.png) !important;
+            height:20px !important;
+            width:20px !important;
+
+        }        
+        
+.iom {
+            background-image:url(
+            ../img/toolbar/money_euro.png) !important;
+            height:20px !important;
+            width:20px !important;
+
+        }
+        
+.help {
+            background-image:url(
+            ../img/toolbar/help.png) !important;
+            height:20px !important;
+            width:20px !important;
+
+        }
+
+.infoWFS{
+	background-image:url(
+            ../img/toolbar/application_form_magnify.png) !important;
+            height:20px !important;
+            width:20px !important;
+	
+}        
+
+        
+.back {
+            background-image:url(
+			../img/toolbar/resultset_previous.png) !important;
+            height:20px !important;
+            width:20px !important;
+
+        }
+.next {
+            background-image:url(
+			../img/toolbar/resultset_next.png) !important;
+            height:20px !important;
+            width:20px !important;
+
+        }
+ 
+.login {
+   background-image:url(
+   	../img/toolbar/door_open.png) !important;
+   	height:20px !important;
+   	width:20px !important;
+}  
+ 
+.logout {
+   background-image:url(
+	../img/toolbar/door.png) !important;
+    height:20px !important;
+    width:20px !important;
+}  
+           
+.externalServer {
+           background-image:url(
+			../img/toolbar/server_connect.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }            
+
+.fileServerUpload {
+           background-image:url(
+			../img/toolbar/drive_disk.png) !important;
+            height:20px !important;
+            width:20px !important;
+        } 
+
+.map_edit {
+           background-image:url(
+			../img/toolbar/map_edit.png) !important;
+            height:20px !important;
+            width:20px !important;
+        } 
+
+.select {
+           background-image:url(
+			../img/toolbar/table_multiple.png) !important;
+            height:20px !important;
+            width:20px !important;
+        }         
+        
+        
+.scenario_edit {
+	background-image:url(
+			../img/toolbar/book_addresses.png) !important;
+            height:20px !important;
+            width:20px !important;
+}      
+
+.risk_sim {
+	background-image:url(
+			../img/toolbar/wand.png) !important;
+            height:20px !important;
+            width:20px !important;
+}           
+           
+
+.server {
+           background-image:url(
+			../img/toolbar/application_xp_terminal.png) !important;
+            height:20px !important;
+            width:20px !important;
+        } 
+        
+.geomagnetic {
+          background-image: url(
+		 ../img/toolbar/bomb.png) !important;
+          height:20px !important;
+          width:20px !important;
+        } 
+
+.sysConstruction {
+          background-image: url(
+		 ../img/toolbar/brick_edit.png) !important;
+          height:20px !important;
+          width:20px !important;
+        } 
+        
+.locate_me {
+           background-image:url(
+			../img/toolbar/compass.png) !important;
+            height:20px !important;
+            width:20px !important;
+}  
+
+.selNodo {
+          background-image: url(
+		 ../img/toolbarSelezione/sel_node.png) !important;
+          height:20px !important;
+          width:20px !important;
+        } 
+
+.selRettangolo {
+          background-image: url(
+		 ../img/toolbarSelezione/sel_rect.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }        
+   
+.selCerchio {
+          background-image: url(
+		 ../img/toolbarSelezione/sel_circle.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }        
+          
+.selPoligono {
+          background-image: url(
+		 ../img/toolbarSelezione/sel_poly.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }    
+        
+.selRegione {
+          background-image: url(
+		 ../img/toolbarSelezione/sel_area.png) !important;
+          height:20px !important;
+          width:20px !important;
+        }    
+
+.nuovaTabella {
+    background-image:url(../img/toolbar/new_tab.gif) !important;
+}
+        
+.salvaParametri {
+    background-image:url(../img/toolbar/database_save.png) !important;
+}
+
+.calcolaIOM {
+    background-image:url(../img/toolbar/calculator.png) !important;
+}
+        

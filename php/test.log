@@ -1,0 +1,26 @@
+* About to connect() to localhost port 80 (#0)
+*   Trying ::1...
+* connected
+* Connected to localhost (::1) port 80 (#0)
+* Server auth using Basic with user 'admin'
+> PUT /geoserver/rest/workspaces/gisplatform/datastores/b1376646348nd_testG_up/file.shp HTTP/1.1
+Authorization: Basic YWRtaW46Z2Vvc2VydmVy
+Host: localhost
+Accept: */*
+Referer: 1
+content-type: application/zip
+Content-Length: 9845
+Expect: 100-continue
+
+* Done waiting for 100-continue
+* We are completely uploaded and fine
+< HTTP/1.1 100 Continue
+< HTTP/1.1 201 Created
+< Date: Fri, 16 Aug 2013 09:45:55 GMT
+< Server: Noelios-Restlet-Engine/1.0..8
+< Content-Length: 0
+< 
+* Connection #0 to host localhost left intact
+# Successful cURL request to http://localhost/geoserver/rest/workspaces/gisplatform/datastores/b1376646348nd_testG_up/file.shp
+
+* Closing connection #0
